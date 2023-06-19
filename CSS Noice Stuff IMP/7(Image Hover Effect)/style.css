@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); /*min is 300px,max is as large as it can be*/
+}
+
+.img-wrapper{  /*This will for hoveer shit that we will do in future*/
+    position: relative;
+    overflow: hidden;
+}
+
+.img-wrapper > img{
+   width: 100%;
+   display: block; /*Since images are inline as default*/
+   aspect-ratio: 1/1;  /*We want it to be square*/
+   /*For oddly sized images,below two lines*/
+   object-fit: cover;
+   object-position: center;
+   transition: 200ms ease-in-out;
+}
+
+.img-wrapper > .content{
+    position: absolute;
+    inset: 0;  /*Shorthand for top,right,bottom,left*/
+    font-size: clamp(1rem,1.5rem,2rem);
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4); /*Adding a partial transparent white background*/
+    display: grid;
+    place-items: center;
+}
+.img-wrapper > .content.fade{
+    opacity: 0;
+}
+
+.img-wrapper:hover > .content.fade{
+    opacity: 1;
+}
+
+/* 
+.img-wrapper:hover > img.blur{
+    filter: blur(5px);
+} */

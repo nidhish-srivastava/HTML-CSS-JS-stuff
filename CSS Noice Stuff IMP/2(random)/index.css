@@ -1,0 +1,41 @@
+
+html{
+    color-scheme: dark light;
+}
+
+.quick-example{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: rgb(53, 110, 110);
+
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
+.quick-example > div{
+    overflow: hidden;
+}
+
+.quick-example:hover{
+    grid-template-rows: 1fr;
+}
+
+button{
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    outline-color: transparent;  /*For ensuring the button navigation*/
+}
+
+button:focus{  /*Problem : when we click,it comes in focus which we dont want*/
+    outline: 3px solid hotpink;
+}
+
+button:focus-visible{
+    outline: 3px solid hotpink;
+}

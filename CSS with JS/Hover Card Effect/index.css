@@ -1,0 +1,58 @@
+:root{
+    --bg-color:rgb(20,20,20)
+}
+
+body{
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+#cards{  /*placing our cards in 2 rows of three card each*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 916px;
+    width: calc(100%-20px);
+}
+
+.card{
+    background-color: rgba(255,255,255,0.02);
+    height: 260px;
+    width: 298px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative; /*so that the before element location is relative to the .card,not to the whole surrounding*/
+}
+
+/* We can use the before pseudo element coz its doesnt require any additional
+  html 
+  position it absolutely to the left and top sides,ensure its height and width are qual to its parent
+  */
+.card::before{
+  height: 100%;
+  opacity: 0;
+  /* transition: opacity 500ms; */
+  width: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  border-radius: inherit; /*keeing the original properties*/
+  /* Now comes the glow effect */
+  background: radial-gradient(1000px circle at var(--mouse-x) var(--mouse-y),   /*100px 100px ki jagh yeh */
+  rgba(255,255,255,0.06),transparent 25%
+  );
+  /*Now we need to define the logic,where we will move the origin position according to our mouse movement  */
+}
+
+.card:hover::before{
+    opacity: 1;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bund </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: salmon;
+      font-family: 'Ms Madi', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1></h1>
+  </div>
+
+
+  <script>
+    let containerE1 = document.querySelector(".container");
+    let careers = ["Web Developer", "Cinephile",];
+    let careerIndex = 0;
+    let characterIndex = -1;  // IF we keep it 0 thenn,it starts from e,i want it to start fromm Very beginning
+    bur()
+    function bur () {
+      characterIndex++; // WITHOUT THis,it wont even start,this is the beginning of the program
+      containerE1.innerHTML = `<h1> I am a ${careers[careerIndex].slice(0, characterIndex)}  </h1>`;  // slice method creates a substring a returns a part of the string(example:slice(0,1) will give W)
+
+      if (characterIndex === careers[careerIndex].length) {  // This means ki When we reach end of the word,move to next new word and again start from index 0
+        careerIndex++;
+        characterIndex = -1;
+      }
+      
+      if (careerIndex === careers.length) {  // This means ki when last word is completed,then again start from the beginning be seting carrerindex to 0
+        careerIndex = 0;
+      }
+      
+      setTimeout(bur, 200);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{
+    font-family: Raleway;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(36, 10, 7)
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(152, 100, 100);
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin-left: .5rem;
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+
+.navbar-links ul {
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.hamburger {
+    position: absolute;
+    top: 22px;
+    right: 10px;
+    display: none;
+    width: 30px;
+    height: 21px;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {  /* Jaise hi 800px hogi width,turant yeh waali properties lg jaaegi */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* This will apply to the title,coz hamburger will have changes and navlinks are invisible*/
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-links {
+        display: none;  /*invisbile,or removing to be precise*/
+        width: 100%;  /*For centering stuff,we need to make the width*/
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;  
+        padding: 0;   
+        margin: 0;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: 20px 30px;
+    }
+
+    .navbar-links.active {   /* toggle this class using classList.toggle using Javascript*/
+        display: flex;
+    }
+}

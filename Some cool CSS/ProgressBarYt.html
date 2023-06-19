@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+</head>
+<body>
+    <!--we can then make the progress bar disappear using javascript */
+              -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .progress{
+            height: 3px;
+            background-color: red;
+            animation: tatti 4s ease-in-out 1 normal;
+        }
+
+        @keyframes tatti{
+            0%{
+                width: 0px;
+            }
+            60%{
+                width: 60vw;
+            }
+            100%{
+                width: 90vw;
+            }
+
+        }
+
+        header{
+            height: 105px;
+            background-color: black;
+        }
+
+        main{
+            height: 95vh;
+            background-color: yellow;
+        }
+    </style>
+    <div class="progress"></div>
+    <header></header>
+    <main></main>
+</body>
+</html>

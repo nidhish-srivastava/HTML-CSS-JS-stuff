@@ -1,0 +1,30 @@
+html{
+    color-scheme: dark light;
+}
+
+.parent{
+    outline: 5px solid hotpink;
+    padding: 1rem;
+}
+
+.main-with-sidebar{
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+.children{
+    outline: 3px solid hotpink;
+    background-color: blue;
+}
+
+.main-with-sidebar > :first-child{
+   flex-basis: 500px;  /*Minimum size i want them to be*/
+   flex-grow: 9999;  /*This will help in growing as well,if size can be more than 500px,or shrink as well*/
+}
+
+.main-with-sidebar > :last-child{
+    flex-basis: 300px; 
+    flex-grow: 1;  /*This will also cause a problem in larger screen(it wont stick like pos:absolute),so we will use some hack*/
+}

@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+:root{
+    --blue:rgb(61,90,254);
+    --light-blue:rgb(33,150,243);
+}
+
+body{
+    background-color: rgb(10,10,10);
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.link{
+    border-top: 1px solid rgba(255,255,255,0.5);   /*Noice way of giving borders*/
+    color: white;
+    font-size: 50px;
+    padding: 25px; 
+    text-decoration: none;
+    font-family: 'Permanent Marker',cursive;
+    position: relative;  /*Ensuring that its child are showing its position according to the position of the parent*/
+}
+
+.link:nth-child(3){
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Giving gradient in the pseudo element */
+
+.link:before{
+    background: linear-gradient(to right,transparent,var(--blue) ,var(--light-blue));
+
+    transition: width .6s ease;
+
+
+   content: '';
+   position: absolute;  /*I dont wanna disturb any other element*/
+   top: 0;
+   left: 0;
+   height: 100%;  /* Ensuring that it takes the complete hight and width */
+   width: 0%;   /* We want that whatever gradients we have created,it shud come once we hover thats why keepijng width 0%*/
+
+}
+
+.link:hover:before{
+    width:100%;
+}

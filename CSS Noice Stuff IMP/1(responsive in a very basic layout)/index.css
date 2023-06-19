@@ -1,0 +1,25 @@
+
+html{
+    color-scheme: light dark;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Using some modern CSS */
+
+/* 
+So, if the parent container is wider than 65 characters, the element's width will be limited to 65 characters. On the other hand, if the parent container is narrower than 65 characters, the element's width will be set to 100% of the parent container's width.
+*/
+main{
+    width: min(70ch,100%);
+    margin-inline: auto;
+}

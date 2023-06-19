@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Search bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:black;
+            height: 100vh;
+        }
+
+        .searchbar{
+            display: flex;
+            align-items: center;
+            width: 300px;
+            height: 50px;
+            padding: 10px;
+            background-color: aliceblue;
+            border-radius: 50px;
+            transition:  1s;
+            box-shadow:0 0 7px white;
+            position: relative;
+        }
+
+        .magnifier {
+  width: 25px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}     
+        /* .fa-search{
+            position: absolute;
+            left: 3px;
+            top: 30%;
+            cursor: pointer;
+        } */
+        .searchbar:hover{
+            box-shadow: 0 0 15px rgb(255, 130, 130);
+        }
+        .input{
+            background-color: transparent;
+            border: none;
+            margin-left: 50px;
+            font-size: 20px;
+            transition: 1s;
+            outline: none;
+            width: 100%;
+        }
+        .searchbar.active{
+            width: 45px;
+        }
+        .input.active{
+            width: 0;
+        }
+        
+
+    </style>
+</head>
+<body>
+   
+         <div class="searchbar active">
+            <img
+            src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/magnifier-512.png"
+            alt="magnifier"
+            class="magnifier"
+          />
+             <input type="text" class="input" placeholder="Search ..." />
+         </div>
+
+    <script>
+      const searchBarContainerEl = document.querySelector(".searchbar");
+      const icon=document.querySelector(".magnifier");
+
+      icon.addEventListener("click",()=>{
+        searchBarContainerEl.classList.toggle("active");
+      });
+
+    </script>
+</body>
+</html>

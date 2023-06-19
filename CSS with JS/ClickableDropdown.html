@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dropdown list using javascript</title>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: black;
+			display: flex;
+			justify-content: center;
+		}
+
+		.main {
+			margin-top: 30px;
+			height: 100vh;
+		}
+
+		.dropdown_button {
+			background-color: #0979ad;
+			color: white;
+			padding: 15px;
+			font-size: 24px;
+			border: none;
+			cursor: pointer;
+			width: 250px;
+			border: 2px solid #ffffff;
+		}
+
+		.courses {
+			display: none;
+		}
+
+		.courses li {
+			text-align: center;
+			padding: 22px 25px;
+			color: yellow;
+			/* text-decoration: none; No need coz text decoration will be useful in theg anchor tag */
+			font-size: 20px;
+			list-style: none;
+			background-color: rgb(47, 47, 47);
+		}
+
+		.courses li a {
+			text-decoration: none;
+			color:  white;
+			/* Anchor tag ka displlay inline hota hai,so we changed it to block so that uspe padding and all apply ho sake,coz inline mein laude se nhi hogi */
+			display: block;
+			padding: 10px;
+		}
+
+		.courses li:hover {
+			background-color: #0979ad;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+			<button class="dropdown_button"
+				onclick="show_list()">
+				Select course
+			</button>
+
+			<div id="courses_id" class="courses">
+				<li><a href="#">Machine learning</a></li>
+				<li><a href="#">Data science</a></li>
+				<li><a href="#">Data analysis</a></li>
+				<li><a href="#">Data mining</a></li>
+				<li><a href="#">Data warehousing</a></li>
+			</div>
+		
+	</div>
+
+	<script>
+		function show_list() {
+			var courses = document.getElementById("courses_id");
+
+			// if condition is for Agr hum apne button pe waapas se click kre,then the dropdown menu that we have created,woh apne aap chla jaaega
+			if (courses.style.display == "block") {
+				courses.style.display = "none";
+			} else {
+				// Display ko flex bhi kr sakte hai
+				// courses.style.display = "flex";
+				// courses.style.flexDirection="column";
+				// courses.style.justifyContent="center";
+				courses.style.display="block";
+				
+				
+			}
+		}
+
+		// Below code is for if we click on the window then dropdown should disappear
+		window.onclick = function (event) {
+			if (!event.target.matches('.dropdown_button')) {
+				document.getElementById('courses_id')
+					.style.display = "none";
+			}
+		}
+	</script>
+</body>
+
+</html>

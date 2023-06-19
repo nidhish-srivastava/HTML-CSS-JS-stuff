@@ -1,0 +1,35 @@
+.photo-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(min(240px,100%),1fr));
+    grid-auto-rows: 240px; /*Each automatically created row will be fixed to 240px*/
+}
+
+
+@media (min-width : 500px) {
+    
+    .card-tall{
+        grid-row: span 2/auto;  /*Here it is span 2 rows,then end whenever -->  start/end  */
+   /* grid-row: 1/4;  Doing the above thing explicitly ---> STart at hori. line 1 and end at hori. line 4*/
+}
+
+.card-wide{
+    grid-column: span 2/auto;
+}
+
+/* Now the layout is responsive(but one problem,at very small screen sizes,spanning two grid lines doesnt really work(items on the right are very skinny 
+SOLUTION : media query(for 500px below,it wont be applied)
+*/
+}
+
+
+
+.img-wrapper > img{
+    width: 100%;
+    display: block; /*Since images are inline as default*/
+    aspect-ratio: 1/1;  /*We want it to be square*/
+    /*For oddly sized images,below two lines*/
+    object-fit: cover;
+    object-position: center;
+    transition: 200ms ease-in-out;
+ }

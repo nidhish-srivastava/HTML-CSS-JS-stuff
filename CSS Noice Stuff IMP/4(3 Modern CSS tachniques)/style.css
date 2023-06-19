@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* In these max and min,one value is relative(like we user vh or %,coz we when do some screen size change,shit also changes */
+
+.container{
+    width: min(90%,1000px);
+    border: 3px solid hotpink;
+    margin-inline: auto; /*It doesnt touches top and bottom,touches left and right only*/
+}
+
+.dark-background{
+  background-color: #333;
+  color: white;
+  /* padding: 1rem; 
+  When we decrease size,it will not stop shrinking,but in max(it will lock at 3vh,since it will be the max one)
+  Modern solution is to use max function */
+  padding: max(3vh,1rem) 1.5rem;
+  margin-bottom: max(5vh,2rem);
+}
+
+/* Now we use Clamp */
+
+h2{
+    font-size: clamp(1rem,4vw,5rem);  /*min,ideal,max  we use vw in middle*/
+    line-height: 1;
+}

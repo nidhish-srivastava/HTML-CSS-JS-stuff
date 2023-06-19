@@ -1,0 +1,56 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.6;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1,h2,h3,h4,p{
+    margin: 0;
+}
+
+.nav-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: 4px solid hotpink;
+    gap: 2rem;
+}
+
+li{
+    flex-grow: 1; /*This helps when the flex wrap,so it takes the remaining shape*/
+    background-color: green;
+}
+
+a{
+    outline: 2px solid hotpink;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.columns{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 10px solid firebrick;
+}
+
+.columns >*{
+    flex-basis: 100%;
+    padding: 1.5rem;
+    background-color: rgb(57, 155, 57);
+}
+
+
+
+@media (min-width : 750px) {
+    .columns{
+        flex-direction: row;
+    }
+}

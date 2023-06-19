@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: blanchedalmond;
+      }
+        .container{
+            display: flex;
+            background: linear-gradient(to right,blue,red,green,yellow);
+            width: 500px;
+            height: 400px;
+            border-radius: 30px;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            font-family: sans-serif;
+            font-size: 30px;
+            box-shadow: 0 0 px 8px rgba(0, 0, 0, 0.4);
+            animation: bur 2s linear infinite;
+        }
+
+        @keyframes bur {
+            100%{
+                filter: hue-rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="subcontainer">
+            <span>
+                HTML,CSS & JS
+            </span>
+        </div>
+            <span></span>
+            <span></span>
+        
+    </div>
+    
+</body>
+</html>

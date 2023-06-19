@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: black;
+            height: 100vh;
+            overflow: hidden;
+        }
+        span{
+            background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png");
+            height: 100px;
+            width: 100px;
+            /* If we dont use absolute,it wont be visible */
+            position: absolute;
+            /* To fit the image inside the container we use below property */
+            background-size: cover;
+            /* Now putting it in the center */
+            left: 50%;
+            top: 50%;
+            /* Now this will be bringing the edge of the icon in center,not the exact middle */
+            transform: translate(-50%,-50%);
+            /* We want to create heart exactly where mouse positions */
+            pointer-events: none;
+            animation: animate 6s linear;
+        }
+        @keyframes animate {
+            0%{
+                /* Keeping the properties original */
+                transform: translate(-50%,-50%);
+                opacity: 1;  /*This means no opacity */
+                filter: hue-rotate(0);  /*This means no change*/
+            }
+            100%{
+                transform: translate(-50%,-5000%); /* Making it go out of the top(coz hum y axis mein bc kr rhe yha)*/
+                opacity: 0;  /*Making it invisible*/
+                filter: hue-rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <span></span> If we wont remove this,then it will disappear after 3s--> 
+    <script>
+        const bur=document.querySelector("body");
+        bur.addEventListener("mousemove", ()=>{
+            const x=event.offsetX;  /*It tells the pixels in x coordiante*/
+            const y=event.offsetY;  /*It tells the pixels in y coordinate*/
+
+            // Now creating a span tag(using span and not div coz)
+            const spanbur=document.createElement("span");
+            
+            // Now changing the position according to the position of the mouse
+            spanbur.style.left = x+"px";
+            spanbur.style.top=y+"px";
+
+            // WE want that random size ke dil create ho so that it looks beautiful
+            const size=Math.random()*100;
+            
+            spanbur.style.width=size+"px";
+            spanbur.style.height=size+"px";
+       
+            // We want that the span which we have created to be removed after 3s(we will use timeout property)
+
+            setTimeout(()=>{
+            spanbur.remove();
+            },3000);
+       
+
+
+             bur.appendChild(spanbur); // hum move krene aur span tag create hote jaaenge
+             });
+
+  
+    </script>
+</body>
+</html>
